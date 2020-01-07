@@ -1,0 +1,118 @@
+
+<!-- saved from url=(0099)https://d1b10bmlvqabco.cloudfront.net/attach/jzmxgkizyr119g/gxxicyrgsbf2x6/k23w9gzmqvfs/quiz08.html -->
+<html class="gr__d1b10bmlvqabco_cloudfront_net"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>SWE 619 Quiz Number 8</title>
+</head>
+<body data-gr-c-s-loaded="true">
+
+<center>
+ <h1>
+  SWE 619 Quiz Number 8 <br>
+  October 23, 2019
+ </h1>
+</center>
+
+
+<font size="+3">
+Name:
+<hr>
+</font>
+Consider the following code:
+<pre>public class Example &lt;E&gt; {
+    String           string = "ant";
+    Integer          seven = 7;
+    E                e = null;
+    Object[]         objects;
+    List &lt; Object &gt;  listObject;
+    List &lt; E &gt;       listE;
+    public void m() {
+          // Java code for questions appears here
+    }
+}
+</pre>
+Independently consider the following 5 sequences of Java instructions.
+Circle one of the four choices.
+<ol>
+<!--
+<LI>
+<pre>
+    listE = new ArrayList();
+    listE.add(e);
+</pre>
+compiler warning &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; compiler error &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; runtime exception &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; normal Java
+<br>
+<b>Answer</b>: compiler warning
+-->
+<hr>
+<li>
+<pre>    objects = new E[1];
+    objects[0] = e;   
+</pre>
+compiler warning &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; compiler error &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; runtime exception &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; normal Java
+<br>
+<b>Answer</b>: compiler error
+<hr>
+</li><li>
+<pre>    listE = new ArrayList &lt; E &gt;();
+    listE.add(e);
+    listObject = listE;
+</pre>
+compiler warning &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; compiler error &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; runtime exception &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; normal Java
+<br>
+<b>Answer</b>: compiler error
+<hr>
+</li><li>
+<pre>    listObject = new ArrayList &lt; String &gt;();
+    listObject.add(string) ;
+    listObject.add(seven) ;
+</pre>
+compiler warning &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; compiler error &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; runtime exception &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; normal Java
+<br>
+<b>Answer</b>:  compiler error
+
+<!--
+<HR>
+<LI>
+<pre>
+    listObject = new ArrayList &lt; Object &gt;(); 
+    listObject.add(string) ;      
+    listObject.add(seven) ;        
+</pre>
+compiler warning &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; compiler error &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; runtime exception &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; normal Java
+<br>
+<b>Answer</b>: normal Java
+-->
+<hr>
+</li><li>
+<pre>    objects = new Object[1];
+    objects[0] = string;   
+    objects[0] = seven;     
+</pre>
+compiler warning &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; compiler error &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; runtime exception &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; normal Java
+<br>
+<b>Answer</b>: normal Java
+<hr>
+</li><li>
+<pre>    objects = new String[1]; 
+    objects[0] = string;     
+    objects[0] = seven;        
+</pre>
+compiler warning &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; compiler error &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; runtime exception &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; normal Java
+<br>
+<b>Answer</b>: runtime exception
+<hr>
+</li></ol>
+
+
+
+
+<div id="fatkun-drop-panel">
+        <a id="fatkun-drop-panel-close-btn">×</a>
+            <div id="fatkun-drop-panel-inner">
+                <div class="fatkun-content">
+                    <svg class="fatkun-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5892"><path d="M494.933333 782.933333c2.133333 2.133333 4.266667 4.266667 8.533334 6.4h8.533333c6.4 0 10.666667-2.133333 14.933333-6.4l2.133334-2.133333 275.2-275.2c8.533333-8.533333 8.533333-21.333333 0-29.866667-8.533333-8.533333-21.333333-8.533333-29.866667 0L533.333333 716.8V128c0-12.8-8.533333-21.333333-21.333333-21.333333s-21.333333 8.533333-21.333333 21.333333v588.8L249.6 475.733333c-8.533333-8.533333-21.333333-8.533333-29.866667 0-8.533333 8.533333-8.533333 21.333333 0 29.866667l275.2 277.333333zM853.333333 874.666667H172.8c-12.8 0-21.333333 8.533333-21.333333 21.333333s8.533333 21.333333 21.333333 21.333333H853.333333c12.8 0 21.333333-8.533333 21.333334-21.333333s-10.666667-21.333333-21.333334-21.333333z" p-id="5893"></path></svg>
+                    <div class="fatkun-title">Drag and Drop</div>
+                    <div class="fatkun-desc">The image will be downloaded</div>
+                </div>
+            </div>
+    </div></body></html>

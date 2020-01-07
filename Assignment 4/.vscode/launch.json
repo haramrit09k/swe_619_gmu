@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Stack",
+            "request": "launch",
+            "mainClass": "Stack_RepOK_AbsFn.Stack",
+            "projectName": "Stack_RepOK_AbsFn"
+        }
+    ]
+}

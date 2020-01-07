@@ -1,0 +1,60 @@
+<HEAD>
+<TITLE>SWE 619 In Class Exercise Number 6</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+ <H1>
+  SWE 619 In Class Exercise Number 6 <BR>
+ </H1>
+</CENTER>
+
+<HR>
+<font size=+1>
+<P>
+This exercise is intended to get you to think about Liskov's argument about <code>equals()</code>.
+The following is "normal" Java:
+<pre>
+Set&lt;List&lt;String&gt;&gt; s = new HashSet&lt;List&lt;String&gt;&gt;();     // AF(s) = ___
+List&lt;String&gt; x = new ArrayList&lt;String&gt;();  // AF(x) = ___
+List&lt;String&gt; y = new ArrayList&lt;String&gt;();  // AF(y) = ___
+s.add(x);		 // AF(s) = ____
+s.add(y);		 // AF(s) = ____
+s.contains(y)            // true or false?
+y.add("cat");	         // AF(y) = ____
+                         // AF(s) = ____
+s.contains(y);           // true or false?
+s.add(y);		 // AF(s) = ____
+y.remove("cat");	 // AF(s) = ____
+
+s.remove(y);             // AF(s) = ____
+s.contains(y);           // true, false, or something else?
+</pre>
+
+
+Fill in the values.  What is the role of preconditions here?
+<br><br>
+
+<br><br>
+<br><br>
+Now, let's turn to related subtypes.
+<OL>
+<LI>
+Define an implementation of <code>Comparator</code>
+that reverses the natural ordering.
+<br> <br>
+Does this implementation satisfy the <code>Comparator</code> contract?
+<br> <br>
+Can you generify this implementation?
+<br><br>
+<LI>
+Repeat the exercise with a <code>comparator&ltInteger&gt;</code> that uses absolute values.
+<br><br>
+<LI>
+Repeat the exercise with a <code>comparator&ltInteger&gt;</code> that orders evens before odds.
+<br><br>
+
+
+</OL>
+
+</BODY>

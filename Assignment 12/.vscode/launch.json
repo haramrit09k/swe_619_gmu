@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MutablePeriod",
+            "request": "launch",
+            "mainClass": "Assignment.MutablePeriod",
+            "projectName": "Assignment 12"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BogusPeriod",
+            "request": "launch",
+            "mainClass": "Assignment.BogusPeriod",
+            "projectName": "Assignment 12"
+        }
+    ]
+}

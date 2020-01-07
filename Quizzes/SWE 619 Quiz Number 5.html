@@ -1,0 +1,98 @@
+
+<!-- saved from url=(0099)https://d1b10bmlvqabco.cloudfront.net/attach/jzmxgkizyr119g/gxxicyrgsbf2x6/k19whh937zq1/quiz05.html -->
+<html class="gr__d1b10bmlvqabco_cloudfront_net"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>SWE 619 Quiz Number 5</title>
+</head>
+<body data-gr-c-s-loaded="true">
+
+<center>
+ <h1>
+  SWE 619 Quiz Number 5 <br>
+  October 2, 2019
+ </h1>
+</center>
+<font size="+2">
+Name:
+</font>
+<hr>
+<font size="+1">
+<p>
+Consider the following (supposedly) immutable class:
+</p><pre>public final class Immutable { 
+   private final String string;
+   private final int x;
+   private final List&lt;String&gt; list;
+
+   public Immutable(String string, int x, List&lt;String&gt; list) {
+      this.string = string;                     // Line A
+      this.x = x;                               // Line B
+      this.list = new ArrayList&lt;String&gt; (list); // Line C
+   }
+
+   public getString() { return string; }  // Line D
+   public getInt()    { return x; }       // Line E
+   public getList()   { return list; }    // Line F
+}
+
+</pre>
+<ol>
+<li>
+Mark whether each line of code
+is a problem w.r.t. the immutability of  class <code>Immutable</code>.
+<br><br>
+<ul>
+<li> Line A: &nbsp;&nbsp; ____&nbsp;Yes&nbsp;&nbsp;&nbsp;____&nbsp;No&nbsp;&nbsp;
+<br><br>
+</li><li> Line B: &nbsp;&nbsp; ____&nbsp;Yes&nbsp;&nbsp;&nbsp;____&nbsp;No&nbsp;&nbsp;
+<br><br>
+</li><li> Line C: &nbsp;&nbsp; ____&nbsp;Yes&nbsp;&nbsp;&nbsp;____&nbsp;No&nbsp;&nbsp;
+<br><br>
+</li><li> Line D: &nbsp;&nbsp; ____&nbsp;Yes&nbsp;&nbsp;&nbsp;____&nbsp;No&nbsp;&nbsp;
+<br><br>
+</li><li> Line E: &nbsp;&nbsp; ____&nbsp;Yes&nbsp;&nbsp;&nbsp;____&nbsp;No&nbsp;&nbsp;
+<br><br>
+</li><li> Line F: &nbsp;&nbsp; ____&nbsp;Yes&nbsp;&nbsp;&nbsp;____&nbsp;No&nbsp;&nbsp;
+</li></ul>
+<b>Answer</b>:
+Lines F is a problem.  Other lines are not.
+<br>
+<br>
+
+</li><li>
+Write pseudo-code that compromises the immutability of the <code>Immutable</code>
+class.
+<br>
+<br>
+<b>Answer</b>:
+Since the <code>List</code> object is the only mutable class here, we need to 
+attack that, and we have to do so through the <code>getList()</code> method:
+<pre>     List&lt;String&gt; list = //... supppose list is [cat, dog]
+     Immutable im = new Immutable("bat", 7, list);
+     list = im.getList();
+     list.add("elephant");   // now I've changed the internal state of Immutable
+                             // from
+                             // &lt;bat, 7, [cat, dog]&gt;
+                             // to
+                             // &lt;bat, 7, [cat, dog, elephant]&gt;
+     
+</pre>
+
+</li></ol>
+
+
+
+</font>
+
+
+
+
+<div id="fatkun-drop-panel">
+        <a id="fatkun-drop-panel-close-btn">×</a>
+            <div id="fatkun-drop-panel-inner">
+                <div class="fatkun-content">
+                    <svg class="fatkun-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5892"><path d="M494.933333 782.933333c2.133333 2.133333 4.266667 4.266667 8.533334 6.4h8.533333c6.4 0 10.666667-2.133333 14.933333-6.4l2.133334-2.133333 275.2-275.2c8.533333-8.533333 8.533333-21.333333 0-29.866667-8.533333-8.533333-21.333333-8.533333-29.866667 0L533.333333 716.8V128c0-12.8-8.533333-21.333333-21.333333-21.333333s-21.333333 8.533333-21.333333 21.333333v588.8L249.6 475.733333c-8.533333-8.533333-21.333333-8.533333-29.866667 0-8.533333 8.533333-8.533333 21.333333 0 29.866667l275.2 277.333333zM853.333333 874.666667H172.8c-12.8 0-21.333333 8.533333-21.333333 21.333333s8.533333 21.333333 21.333333 21.333333H853.333333c12.8 0 21.333333-8.533333 21.333334-21.333333s-10.666667-21.333333-21.333334-21.333333z" p-id="5893"></path></svg>
+                    <div class="fatkun-title">Drag and Drop</div>
+                    <div class="fatkun-desc">The image will be downloaded</div>
+                </div>
+            </div>
+    </div></body></html>

@@ -1,0 +1,105 @@
+-- SMV Specification for 4-way intersection
+-- Haramrit Singh Khurana
+
+MODULE main
+VAR
+  EW : direction; 
+  NS : direction;
+  WE : direction; 
+  SN : direction;
+
+  EWGreen  : process ToGreen(EW, SN, WE, EW);
+  NSGreen  : process ToGreen(NS, SN, WE, EW);
+  WEGreen  : process ToGreen(WE, SN, NS, EW);
+  SNGreen  : process ToGreen(SN, NS, WE, EW);
+
+  EWYellow : process ToYellow(EW);
+  NSYellow : process ToYellow(NS);
+
+  EWRed    : process ToRed(EW);
+  NSRed    : process ToRed(NS);
+
+SPEC
+   AG(EW.light = red | NS.light = red | SN.light = red | WE.light = red)
+
+SPEC
+	AG((EW.light = yellow) -> EX (EW.light = red))
+
+SPEC
+   AG((NS.light = green ) -> AX (EW.light = red | SN.light = red | WE.light = red))
+
+
+MODULE direction
+VAR
+   light : {red, yellow, green};
+   leftTurn: boolean;
+   rightTurn: boolean;
+
+ASSIGN
+   init(light) := red;
+   init(leftTurn) := FALSE; 
+   init(rightTurn) := FALSE;
+
+MODULE ToGreen(dir1, cdir1, cdir2, cdir3)
+
+ASSIGN
+   next(dir1.light) :=
+      case
+       (dir1.light = red) & (cdir1.light = red) & (cdir2.light = red) & (cdir3.light = red) : green;
+       TRUE : dir1.light;
+      esac;
+
+   next(dir1.leftTurn) :=
+   	  case
+   	   (dir1.light = green) : TRUE;
+   	   TRUE: FALSE;
+   	  esac;
+
+   next(dir1.rightTurn) :=
+   	  case
+   	   (dir1.light = green) : TRUE;
+   	   TRUE: FALSE;
+   	  esac;
+
+
+MODULE ToYellow(dir1)
+
+ASSIGN
+   next(dir1.light) :=
+      case
+       (dir1.light = green) : yellow;
+       TRUE : dir1.light;
+      esac;
+
+   next(dir1.leftTurn) :=
+   	  case
+   	   (dir1.light = yellow) : FALSE;
+   	   TRUE: FALSE;
+   	  esac;
+
+   next(dir1.rightTurn) :=
+   	  case
+   	   (dir1.light = yellow) : TRUE;
+   	   TRUE: FALSE;
+   	  esac;
+
+
+MODULE ToRed(dir1)
+
+ASSIGN
+   next(dir1.light) :=
+      case
+       (dir1.light = yellow) : red;
+       TRUE : dir1.light;
+      esac;
+   next(dir1.leftTurn) :=
+   	  case
+   	   (dir1.light = red) : FALSE;
+   	   TRUE: FALSE;
+   	  esac;
+
+   next(dir1.rightTurn) :=
+   	  case
+   	   (dir1.light = red) : TRUE;
+   	   TRUE: FALSE;
+   	  esac;      

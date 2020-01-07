@@ -1,0 +1,53 @@
+<HEAD>
+<TITLE>SWE 619 In Class Exercise Number 0</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+ <H1>
+  SWE 619 In Class Exercise Number 0B <BR>
+ </H1>
+</CENTER>
+
+<HR>
+<P>
+This may look like (just) a testing exercise, 
+but I want us to view it as a specification exercise.
+<pre>
+  /**
+    * Returns the mininum element in a list
+    * @param list Comparable list of elements to search
+    * @return the minimum element in the list
+    * @throws NullPointerException if list is null or
+    *         if any list elements are null
+    * @throws ClassCastException if list elements are not mutually comparable
+    * @throws IllegalArgumentException if list is empty
+    */
+    public static &lt;T extends Comparable&lt;? super T&gt;&gt; T min (List&lt;? extends T&gt; list) {
+       if (list.size() == 0) {
+          throw new IllegalArgumentException ("Min.min");
+       }
+
+       T result = list.get(0);
+
+       for (T comp : list) {
+           if (comp.compareTo(result) < 0) {    // throws NPE, CCE as needed
+               result = comp;
+           }
+       }
+       return result;
+    }
+</pre>
+Identify tests you think are necessary for this code.
+Justify each test.
+<UL>
+<LI>	First, think about happy path tests.
+<LI>	Next, think about remaining tests.
+<LI>	Which of these tests come from the specification, and which come from the code?
+</UL>
+<p>
+How do we transform these tests into JUnit?
+<br>
+
+
+</BODY>

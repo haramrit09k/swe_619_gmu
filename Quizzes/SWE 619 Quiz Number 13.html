@@ -1,0 +1,142 @@
+
+<!-- saved from url=(0099)https://d1b10bmlvqabco.cloudfront.net/attach/jzmxgkizyr119g/gxxicyrgsbf2x6/k3rxxdcynxp1/quiz13.html -->
+<html class="gr__d1b10bmlvqabco_cloudfront_net"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>SWE 619 Quiz Number 13</title>
+</head>
+<body data-gr-c-s-loaded="true">
+
+<center>
+ <h1>
+  SWE 619 Quiz Number 13 <br>
+  December 4, 2019
+ </h1>
+</center>
+
+<font size="+3">
+Name:
+</font>
+<hr>
+<font size="+1">
+</font><ol><font size="+1">
+</font><li><font size="+1">
+Consider the "int enum pattern", a throwback to C, vs.
+Java enums.
+<pre>// int enum pattern (in Java)
+public static final int APPLE_FUJI         = 0;
+public static final int APPLE_PIPPIN       = 1;
+
+public static final int ORANGE_NAVEL       = 0;
+public static final int ORANGE_TEMPLE      = 1;
+
+vs.
+
+// Java enum - basic version
+public enum Apple  { FUJI, PIPPIN };
+public enum Orange { NAVEL, TEMPLE };
+</pre>
+
+Bloch identifies various problems with the first pattern.
+Identify 3 of these reasons.
+<ul>
+<li> <br>  <br>
+</li><li> <br>  <br>
+</li><li> <br> <br>
+</li></ul>
+
+
+<br> <b>Answer</b>
+<ul>
+<li>  The int enum pattern is not type safe.
+This means that comparing apples to oranges:
+<pre>(APPLE_FUJI == ORANGE_TEMPLE)
+</pre>
+is meaningless,
+but compiles and runs.
+On the other hand, the expression:
+<pre>(FUJI == TEMPLE)
+</pre>
+won't compile.
+</li><li>
+The name spaces for enums are distinct,
+hence you are stuck with
+APPLE_FUJI in the int enum pattern, 
+instead of the more convenient FUJI.
+</li><li>
+The int enum pattern is brittle.
+Since integer constants are compiled in,
+changing a constant requires recompiling clients,
+which is basically unrealistic in real-world programs.
+On the other hand, Java enums are objects,
+so dynamic dispatching yields the correct behavior
+without client recompilation.
+</li><li>
+There is no easy way to obtain Strings from
+the int enum pattern, but Java enums provide
+a sensible default behavior in toString().
+</li><li>
+There is no way to determine, at run time,
+how many enums are in an int enum pattern,
+but this information is easily available in Java enums.
+</li></ul>
+Grading note:  Variations of these answers are acceptable for grading,
+as are answers that reference the added expressive power of Java enums.
+Only the reason is required; explanations are not.
+
+<!--
+<LI>  Why does Bloch object to the following enum?
+<pre>
+public enum Ensemble {
+    SOLO, DUET, TRIO, QUARTET, QUINTET,
+    SEXTET, SEPTET, OCTET, NONET, DECTET;
+
+    public int numberOfMusicians() { return ordinal() + 1; }
+}
+</pre>
+<br>
+<br> <b>Answer</b>
+Bloch advocates the use of instance fields instead of ordinals.
+Ordinal use is brittle, and cannot withstand gaps, duplicates, or re-ordering of enums.
+<LI>
+Is <code>EnumSet</code> a subtype of <code>Set</code>?
+In other words, does <code>EnumSet</code>
+satisfy the "is a" relation with respect to the <code>Set</code> interface?
+<br> <br>
+<br> <b>Answer</b>
+Yes.
+
+<LI>
+In Item 35 (Prefer annotiations to naming patterns),
+Bloch identifies three significant disadvantages of
+naming patterns.
+List two of these:
+<UL>
+<LI> <br>  <br>
+<LI> <br>  <br>
+</UL>
+<br> <b>Answer</b>
+<UL>
+<LI> Typographical errors in naming patterns result in silent failures.
+<LI> There is no way to ensure that naming patterns are assoiated
+	with the appropriate program element.
+<LI> Naming patterns do not provide a mechanism to
+	associate parameter values with program elements.
+</UL>
+
+</OL>
+
+-->
+
+</font>
+
+
+
+</li></ol><div id="fatkun-drop-panel">
+        <a id="fatkun-drop-panel-close-btn">×</a>
+            <div id="fatkun-drop-panel-inner">
+                <div class="fatkun-content">
+                    <svg class="fatkun-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5892"><path d="M494.933333 782.933333c2.133333 2.133333 4.266667 4.266667 8.533334 6.4h8.533333c6.4 0 10.666667-2.133333 14.933333-6.4l2.133334-2.133333 275.2-275.2c8.533333-8.533333 8.533333-21.333333 0-29.866667-8.533333-8.533333-21.333333-8.533333-29.866667 0L533.333333 716.8V128c0-12.8-8.533333-21.333333-21.333333-21.333333s-21.333333 8.533333-21.333333 21.333333v588.8L249.6 475.733333c-8.533333-8.533333-21.333333-8.533333-29.866667 0-8.533333 8.533333-8.533333 21.333333 0 29.866667l275.2 277.333333zM853.333333 874.666667H172.8c-12.8 0-21.333333 8.533333-21.333333 21.333333s8.533333 21.333333 21.333333 21.333333H853.333333c12.8 0 21.333333-8.533333 21.333334-21.333333s-10.666667-21.333333-21.333334-21.333333z" p-id="5893"></path></svg>
+                    <div class="fatkun-title">Drag and Drop</div>
+                    <div class="fatkun-desc">The image will be downloaded</div>
+                </div>
+            </div>
+    </div></body></html>

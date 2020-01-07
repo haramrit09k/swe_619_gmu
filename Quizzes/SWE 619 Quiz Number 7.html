@@ -1,0 +1,81 @@
+
+<!-- saved from url=(0099)https://d1b10bmlvqabco.cloudfront.net/attach/jzmxgkizyr119g/gxxicyrgsbf2x6/k1twiglbcya8/quiz07.html -->
+<html class="gr__d1b10bmlvqabco_cloudfront_net"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>SWE 619 Quiz Number 7</title>
+</head>
+<body data-gr-c-s-loaded="true">
+
+<center>
+ <h1>
+  SWE 619 Quiz Number 7 <br>
+  October 15, 2019
+ </h1>
+</center>
+
+<font size="+3">
+Name:
+</font>
+<hr>
+<font size="+1">
+<pre> Set&lt;String&gt; t = //  See questions below
+
+ t.add("antelope");
+ t.add("dog");
+ t.add("cat");
+
+ // t.toString() is ???
+</pre>
+<hr>
+<ol>
+<li>	Suppose <code>t</code> is instantiated as
+<pre> Set&lt;String&gt; t = new TreeSet&lt;String&gt;();
+</pre>
+	At the end of the computation, what is <code>t.toString()</code>?
+<br><br>
+<br><br>
+<br><b>Answer:</b>  <code>[antelope, cat, dog]</code>
+</li><li>	Suppose <code>t</code> is instantiated as
+<pre> Set&lt;String&gt; t = new TreeSet&lt;String&gt;((x,y) -&gt; x.length() - y.length());
+</pre>
+	At the end of the computation, what is <code>t.toString()</code>?
+<br><br>
+<br><br>
+<br><b>Answer:</b>  <code>[dog, antelope]</code>
+</li><li>	Suppose <code>t</code> is instantiated as
+<pre> Set&lt;String&gt; t = new TreeSet&lt;String&gt;((x,y) -&gt; y.compareTo(x));
+</pre>
+	At the end of the computation, what is <code>t.toString()</code>?
+<br><br>
+<br><br>
+<br><b>Answer:</b>  <code>[dog, cat, antelope]</code>
+</li><li>	Which <code>Comparator</code> implementation is problematic?
+Fill in the blank:
+<br> <br>
+<br>
+<i>
+The one in question ________.
+</i>
+<br>
+<br><br>
+<br><b>Answer:</b> 
+The one in question 2.
+</li><li>	Why is it problematic?  Cite the relevant contract clause that is violated.
+<br><b>Answer:</b> 
+	<code>compare(a,b)</code>&nbsp;
+	is not consistent with <code>a.equals(b)</code>.
+</li></ol>
+</font>
+
+
+
+
+<div id="fatkun-drop-panel">
+        <a id="fatkun-drop-panel-close-btn">×</a>
+            <div id="fatkun-drop-panel-inner">
+                <div class="fatkun-content">
+                    <svg class="fatkun-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5892"><path d="M494.933333 782.933333c2.133333 2.133333 4.266667 4.266667 8.533334 6.4h8.533333c6.4 0 10.666667-2.133333 14.933333-6.4l2.133334-2.133333 275.2-275.2c8.533333-8.533333 8.533333-21.333333 0-29.866667-8.533333-8.533333-21.333333-8.533333-29.866667 0L533.333333 716.8V128c0-12.8-8.533333-21.333333-21.333333-21.333333s-21.333333 8.533333-21.333333 21.333333v588.8L249.6 475.733333c-8.533333-8.533333-21.333333-8.533333-29.866667 0-8.533333 8.533333-8.533333 21.333333 0 29.866667l275.2 277.333333zM853.333333 874.666667H172.8c-12.8 0-21.333333 8.533333-21.333333 21.333333s8.533333 21.333333 21.333333 21.333333H853.333333c12.8 0 21.333333-8.533333 21.333334-21.333333s-10.666667-21.333333-21.333334-21.333333z" p-id="5893"></path></svg>
+                    <div class="fatkun-title">Drag and Drop</div>
+                    <div class="fatkun-desc">The image will be downloaded</div>
+                </div>
+            </div>
+    </div></body></html>

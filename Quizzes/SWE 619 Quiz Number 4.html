@@ -1,0 +1,108 @@
+
+<!-- saved from url=(0099)https://d1b10bmlvqabco.cloudfront.net/attach/jzmxgkizyr119g/gxxicyrgsbf2x6/k10vhcahtpzw/quiz04.html -->
+<html class="gr__d1b10bmlvqabco_cloudfront_net"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>SWE 619 Quiz Number 4</title>
+</head>
+<body data-gr-c-s-loaded="true">
+
+<center>
+ <h1>
+  SWE 619 Quiz Number 4 <br>
+  September 25, 2019
+ </h1>
+</center>
+
+
+<font size="+3">
+Name:
+</font>
+<hr>
+
+
+<font size="+0">
+   The rep-invariant for Liskov's Poly class (as implemented in the text) is:
+<pre>      private int deg;
+      private int[] trms; 
+
+      1) trms != null &amp;&amp;
+      2) trms.length &gt;= 1 &amp;&amp;
+      3) deg = trms.length-1 &amp;&amp;
+      4) if deg &gt; 0 then trms[deg] !=0 
+</pre>
+   Suppose that we weaken the rep-invariant be deleting the 4th constraint.
+   Note that there is no effect on the abstraction function.
+<ol>
+<li>
+	Consider the Poly 5 + 4x^2.
+<br>
+	Give example values for <code>deg</code> and <code>trms</code>
+	that satisfy the new invariant, but not the old one.
+<br>
+<br>
+<br>
+<br>
+<br>
+<b>Answer</b>:
+Basically, you need a trailing zero.
+Here are two possibilities.
+<pre>   deg = 3, trms = [5,0,4,0]
+   deg = 4, trms = [5,0,4,0,0]
+</pre>
+</li><li>
+	The <code>degree</code> method, as written, is not correct under the weaker rep-invariant.
+<pre>public int degree() {
+   // Effects:  Returns the degree of this, ie the largest exponent
+   //    with a non-zero coefficient.  Returns 0 if this is the zero Poly.
+   return deg; 
+}
+</pre>
+Step through the analysis:
+<ul>
+	<li> Does <code>degree()</code> maintain the weaker rep-invariant?
+	If not, what's the problem?
+<br> <br> <br> <br>
+	</li><li> Does <code>degree()</code> satisfy its contract? 
+	If not, what's the problem?  (Note:  Depending on the answer to the previous question,
+	no analysis may be required here.)
+</li></ul>
+<br> <br> <br> <br>
+<b>Answer</b>:
+<code>degree()</code> definitely maintains the rep-invariant.
+It doesn't modify any variables!
+But it doesn't satisfy its contract.
+The problem is that the contract asks for the degree,
+but deg might be associated with a zero coefficient.
+</li><li>
+	Rewrite <code>degree()</code>
+	so that it is correct under the weaker rep-invariant
+	("Quiz" Java is fine.)
+<br>
+<br>
+<br>
+<br>
+<br>
+<b>Answer</b>:
+The necessary code searches for the highest non-zero coefficient in the 
+<code>trms</code> array and return the corresponding index.
+<pre>   for (int i = deg; i &gt;= 0; i--) {
+      if (trms[i] != 0) return i;
+   }
+   return 0;
+</pre>
+Grading note:  I'm unconcerned about Java syntax or minor errors;
+if it's clear from your code what your intent is, you'll receive credit.
+
+</li></ol>
+</font>
+
+
+<div id="fatkun-drop-panel">
+        <a id="fatkun-drop-panel-close-btn">×</a>
+            <div id="fatkun-drop-panel-inner">
+                <div class="fatkun-content">
+                    <svg class="fatkun-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5892"><path d="M494.933333 782.933333c2.133333 2.133333 4.266667 4.266667 8.533334 6.4h8.533333c6.4 0 10.666667-2.133333 14.933333-6.4l2.133334-2.133333 275.2-275.2c8.533333-8.533333 8.533333-21.333333 0-29.866667-8.533333-8.533333-21.333333-8.533333-29.866667 0L533.333333 716.8V128c0-12.8-8.533333-21.333333-21.333333-21.333333s-21.333333 8.533333-21.333333 21.333333v588.8L249.6 475.733333c-8.533333-8.533333-21.333333-8.533333-29.866667 0-8.533333 8.533333-8.533333 21.333333 0 29.866667l275.2 277.333333zM853.333333 874.666667H172.8c-12.8 0-21.333333 8.533333-21.333333 21.333333s8.533333 21.333333 21.333333 21.333333H853.333333c12.8 0 21.333333-8.533333 21.333334-21.333333s-10.666667-21.333333-21.333334-21.333333z" p-id="5893"></path></svg>
+                    <div class="fatkun-title">Drag and Drop</div>
+                    <div class="fatkun-desc">The image will be downloaded</div>
+                </div>
+            </div>
+    </div></body></html>

@@ -1,0 +1,95 @@
+
+<!-- saved from url=(0099)https://d1b10bmlvqabco.cloudfront.net/attach/jzmxgkizyr119g/gxxicyrgsbf2x6/k1jwfwwdzp0h/quiz06.html -->
+<html class="gr__d1b10bmlvqabco_cloudfront_net"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>SWE 619 Quiz Number 6</title>
+</head>
+<body data-gr-c-s-loaded="true">
+
+<center>
+ <h1>
+  SWE 619 Quiz Number 6 <br>
+  October 9, 2019
+ </h1>
+</center>
+
+<font size="+3">
+Name:
+</font>
+<hr>
+
+<font size="+0">
+  Consider the following classes with
+  method <code>compose()</code>.
+<pre>class A {
+   public Iterator compose (Iterator itr)
+   // Requires: itr is not null
+   // Modifies: itr
+   // Effects: if this is not appropriate for itr throw IAE
+   // else return generator of itr composed with this
+class B {
+   public Iterator compose (Iterator itr)
+   // Modifies: itr
+   // Effects: if itr is null throw NPE 
+   // else if this is not appropriate for itr throw IAE
+   // else return generator of itr composed with this
+class C {
+   public Iterator compose (Iterator itr)
+   // Modifies: itr
+   // Effects: if itr is null return iterator equal to this
+   // else if this is not appropriate for itr throw IAE
+   // else return generator of itr composed with this
+</pre>
+Analyze the "methods rule"
+for <code>compose()</code> in each of these cases:
+Note:  Some analysis may not be necessary.  If so, indicate that.
+<ol>
+<li>    <code>B</code> extends <code>A</code>.
+<br> Precondition Part:
+<br><b>Answer:</b> Satisfied: weaker precondition in B
+<br> Postcondition Part:
+<br><b>Answer:</b> Satisfied:  Identical behavior where A defined, with additional behavior where A not defined.
+<hr>
+</li><li>    <code>C</code> extends <code>A</code>.
+<br> Precondition Part:
+<br><b>Answer:</b> Satisfied: weaker precondition in C
+<br> Postcondition Part:
+<br><b>Answer:</b> Satisfied:  Identical behavior where A defined, with additional behavior where A not defined.
+<hr>
+</li><li>    <code>A</code> extends <code>B</code>.
+<br> Precondition Part:
+<br><b>Answer:</b> Not satisfied: stronger precondition in A
+<br> Postcondition Part:
+<br><b>Answer:</b> No analysis required
+<hr>
+</li><li>    <code>C</code> extends <code>B</code>.
+<br> Precondition Part:
+<br><b>Answer:</b> Satisfied: same preconditions
+<br> Postcondition Part:
+<br><b>Answer:</b> Not satisfied: Inconsistent behavior in case where itr is null
+<hr>
+</li><li>    <code>B</code> extends <code>C</code>.
+<br> Precondition Part:
+<br><b>Answer:</b> Satisfied: same preconditions
+<br> Postcondition Part:
+<br><b>Answer:</b> Not satisfied: Inconsistent behavior in case where itr is null
+</li></ol>
+Grading note:  Justifications are not required for credit.
+
+
+</font>
+
+
+
+<hr>
+
+
+<div id="fatkun-drop-panel">
+        <a id="fatkun-drop-panel-close-btn">×</a>
+            <div id="fatkun-drop-panel-inner">
+                <div class="fatkun-content">
+                    <svg class="fatkun-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5892"><path d="M494.933333 782.933333c2.133333 2.133333 4.266667 4.266667 8.533334 6.4h8.533333c6.4 0 10.666667-2.133333 14.933333-6.4l2.133334-2.133333 275.2-275.2c8.533333-8.533333 8.533333-21.333333 0-29.866667-8.533333-8.533333-21.333333-8.533333-29.866667 0L533.333333 716.8V128c0-12.8-8.533333-21.333333-21.333333-21.333333s-21.333333 8.533333-21.333333 21.333333v588.8L249.6 475.733333c-8.533333-8.533333-21.333333-8.533333-29.866667 0-8.533333 8.533333-8.533333 21.333333 0 29.866667l275.2 277.333333zM853.333333 874.666667H172.8c-12.8 0-21.333333 8.533333-21.333333 21.333333s8.533333 21.333333 21.333333 21.333333H853.333333c12.8 0 21.333333-8.533333 21.333334-21.333333s-10.666667-21.333333-21.333334-21.333333z" p-id="5893"></path></svg>
+                    <div class="fatkun-title">Drag and Drop</div>
+                    <div class="fatkun-desc">The image will be downloaded</div>
+                </div>
+            </div>
+    </div></body></html>

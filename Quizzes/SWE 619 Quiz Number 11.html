@@ -1,0 +1,93 @@
+
+<!-- saved from url=(0099)https://d1b10bmlvqabco.cloudfront.net/attach/jzmxgkizyr119g/gxxicyrgsbf2x6/k2yrfj4h8fqz/quiz11.html -->
+<html class="gr__d1b10bmlvqabco_cloudfront_net"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>SWE 619 Quiz Number 11</title>
+</head>
+<body data-gr-c-s-loaded="true">
+
+<center>
+ <h1>
+  SWE 619 Quiz Number 11 <br>
+  November 13, 2019
+ </h1>
+</center>
+
+<font size="+3">
+Name:
+<hr>
+</font>
+
+<font size="+1">
+Consider the following code,
+and suppose the main method in <code>Sub</code> is
+executed.
+<pre>public class Super {
+  private String y;
+  public Super () { stut();}
+  public void stut() { if (y == null) {y = "cat";} else {y = y + y;}}
+}
+public class Sub extends Super {
+  private String x;
+  public Sub (String s) { x = s;}
+  @Override public void stut() {
+     x = x + x;
+  }
+  public static void main(String[] args) {
+      Super s = new Sub("dog");
+  }
+}
+</pre>
+<ol>
+<li>	Is the constructor in <code>Super</code> invoked?  Why or why not?
+<br> <br> <br> <br> <br>
+<br><b>Answer:</b>  Yes.  There is an implicit
+call to <code>super();</code>
+as the very first instruction
+in the <code>Sub</code> constructor
+</li><li>	Is the <code>stut()</code> method in <code>Super</code> invoked?
+	Why or why not?
+<br> <br> <br> <br> <br>
+<br><b>Answer:</b>  No. The <code>stut()</code> method is overridden
+in class <code>Sub</code>, and so the class <code>Sub</code>
+<code>stut()</code> method is invoked instead.
+</li><li>	Is the <code>stut()</code> method in <code>Sub</code> invoked?
+	Why or why not?
+<br> <br> <br> <br> <br>
+<br><b>Answer:</b>  Yes. See the answer to the previous question.
+</li><li>	The execution of
+	<code>main()</code> in Sub
+	terminates with an exception.
+	Which one, and why?
+<br> <br> <br> <br> <br>
+<br><b>Answer:</b>  <code>NullPointerException</code>.
+	The reason is that the <code>+</code>
+	operator is called on <code>x</code> while x is still null.
+<br>
+<b>Note:</b>  Correction:  There is no exception.  It turns out that null + null returns the
+string "nullnull".
+<br>
+Because the question is broken, everyone gets credit!
+</li><li>	Which rule in Bloch does this code violate?
+	(Any reasonable phrasing of the principle is fine.)
+<br> <br> <br> <br> <br>
+<br><b>Answer:</b>  The rule that says "Constructors
+       (in classes that may be extended) must not invoke
+	overridable methods."
+</li></ol>
+</font>
+
+
+
+<hr>
+
+
+<div id="fatkun-drop-panel">
+        <a id="fatkun-drop-panel-close-btn">×</a>
+            <div id="fatkun-drop-panel-inner">
+                <div class="fatkun-content">
+                    <svg class="fatkun-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5892"><path d="M494.933333 782.933333c2.133333 2.133333 4.266667 4.266667 8.533334 6.4h8.533333c6.4 0 10.666667-2.133333 14.933333-6.4l2.133334-2.133333 275.2-275.2c8.533333-8.533333 8.533333-21.333333 0-29.866667-8.533333-8.533333-21.333333-8.533333-29.866667 0L533.333333 716.8V128c0-12.8-8.533333-21.333333-21.333333-21.333333s-21.333333 8.533333-21.333333 21.333333v588.8L249.6 475.733333c-8.533333-8.533333-21.333333-8.533333-29.866667 0-8.533333 8.533333-8.533333 21.333333 0 29.866667l275.2 277.333333zM853.333333 874.666667H172.8c-12.8 0-21.333333 8.533333-21.333333 21.333333s8.533333 21.333333 21.333333 21.333333H853.333333c12.8 0 21.333333-8.533333 21.333334-21.333333s-10.666667-21.333333-21.333334-21.333333z" p-id="5893"></path></svg>
+                    <div class="fatkun-title">Drag and Drop</div>
+                    <div class="fatkun-desc">The image will be downloaded</div>
+                </div>
+            </div>
+    </div></body></html>

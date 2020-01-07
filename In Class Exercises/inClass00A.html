@@ -1,0 +1,64 @@
+<HEAD>
+<TITLE>SWE 619 In Class Exercise Number 0</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+ <H1>
+  SWE 619 In Class Exercise Number 0A <BR>
+ </H1>
+</CENTER>
+
+<HR>
+<em>Instructions</em>:  Work with your neighbors in groups.
+This exercise touches on
+some of the thorny issues in data abstraction and inheritance.
+There is a lot going on in this example.
+Hence
+don't worry if it seems confusing today.
+We'll revisit this example several times over the course of the semester.
+
+<p>
+Consider the following (textbook) code:
+<pre>
+public class User {
+    private String name;
+    public User (String name) { this.name = name; }
+    @Override public boolean equals (Object obj) {
+       if (!(obj instanceof User)) return false;
+       return ((User) obj).name.equals(this.name);
+    }
+}
+public class SpecialUser extends User {
+    private int id;
+    public SpecialUser (String name, int id) { super(name); this.id = id; }
+    @Override public boolean equals (Object obj) {
+       if (!(obj instanceof SpecialUser)) return false;
+       return super.equals(obj) && ((SpecialUser) obj).id == this.id;
+    }
+}
+</pre>
+<OL>
+<LI> What does it mean for the <code>equals()</code> method
+to be <b>correct</b>?  How do you know?
+Be as concrete as you can.  Can you check correctness
+with test cases?
+<br> <br> <br> <br> <br>
+<LI> How does the given implementation of <code>equals()</code> in
+in class <code>User</code> stack up?
+Again, be concrete.
+Can you find a test case that demonstrates the problem?
+<br> <br> <br> <br> <br>
+<LI> How does inheritance complicate the correctness
+discussion for <code>equals()</code> 
+in class <code>SpecialUser</code>?
+<br> <br> <br> <br> <br>
+<LI> What do you think of the <code>equals()</code>
+method in the <code>SpecialUser</code> class?
+</OL>
+
+
+
+</body>
+</html>
+

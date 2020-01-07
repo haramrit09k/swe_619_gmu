@@ -1,0 +1,117 @@
+
+<!-- saved from url=(0099)https://d1b10bmlvqabco.cloudfront.net/attach/jzmxgkizyr119g/gxxicyrgsbf2x6/k2qn2ufcuzci/quiz10.html -->
+<html class="gr__d1b10bmlvqabco_cloudfront_net"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>SWE 619 Quiz Number 10</title>
+</head>
+<body data-gr-c-s-loaded="true">
+
+<center>
+ <h1>
+  SWE 619 Quiz Number 10 <br>
+  November 6, 2019
+ </h1>
+</center>
+
+<font size="+2">
+Name:
+<hr>
+</font>
+
+  Consider the following code.
+<pre>class Apple {
+  // rep-inv:  name != null
+  private String name;
+  public Apple (String name) {   
+     if (name == null) throw new NPE(...);
+     this.name = name;
+  }
+  @Override public boolean equals (Object o) {
+     if (!(o instanceof Apple)) { return false; }
+     Apple a = (Apple) o;     
+     return name.equals(a.name);
+  }
+  @Override public int hashCode() { // see questions below }
+  @Override public String toString() { return name; }
+}
+class AppleTracker extends Apple {
+  private static Set&lt;String&gt; inventory = new HashSet&lt;String&gt; ();
+  public AppleTracker (String name) { super(name); inventory.add(name);}
+  public static Set&lt;String&gt; getInventory() { return Collections.unmodifiableSet(inventory);}
+}
+// client code
+Apple a = new Apple("Winesap");
+AppleTracker at1 = new AppleTracker("Winesap");
+AppleTracker at2 = new AppleTracker("Fuji");
+</pre>
+Mark each of the following statements <b>True</b> or <b>False</b>:
+<ol>
+<li><b>True</b> &nbsp; &nbsp; <b>False</b> &nbsp; &nbsp;
+The <code>equals()</code> method in the <code>AppleTracker</code>
+class is inherited from the <code>Apple</code> class.
+<br> <br>
+
+</li><li><b>True</b> &nbsp; &nbsp; <b>False</b> &nbsp; &nbsp;
+<code>a.equals(at1)</code> sometimes returns <code>true</code>
+and sometimes returns <code>false</code>.
+<br> <br>
+
+</li><li><b>True</b> &nbsp; &nbsp; <b>False</b> &nbsp; &nbsp;
+The <code>equals()</code> method in the <code>Apple</code>
+class relies on the rep-invariant to satisfy its contract.
+<br> <br>
+
+</li><li><b>True</b> &nbsp; &nbsp; <b>False</b> &nbsp; &nbsp;
+<code>AppleTracker()</code> adds client-visible state
+to <code>Apple</code> objects.
+<br> <br>
+
+</li><li><b>True</b> &nbsp; &nbsp; <b>False</b> &nbsp; &nbsp;
+<code>a.equals(at1)</code> and 
+<code>at1.equals(a)</code> are both <code>true</code>.
+<br> <br>
+
+</li><li><b>True</b> &nbsp; &nbsp; <b>False</b> &nbsp; &nbsp;
+<code>a.equals(at2)</code> and 
+<code>at2.equals(a)</code> are both <code>false</code>.
+<br> <br>
+
+</li><li><b>True</b> &nbsp; &nbsp; <b>False</b> &nbsp; &nbsp;
+<code>at1.equals(a)</code> and 
+<code>a.equals(at2)</code> are both <code>true</code>,
+but <code>at1.equals(at2)</code> is <code>false</code>.
+<br> <br>
+
+</li><li><b>True</b> &nbsp; &nbsp; <b>False</b> &nbsp; &nbsp;
+It would correct to implement <code>hashCode()</code> as
+<code> return name.hashCode(); </code>
+<br> <br>
+
+</li><li><b>True</b> &nbsp; &nbsp; <b>False</b> &nbsp; &nbsp;
+It would correct to inherit <code>hashCode()</code> from the <code>Object</code> class.
+<br> <br>
+
+</li><li><b>True</b> &nbsp; &nbsp; <b>False</b> &nbsp; &nbsp;
+Bloch would object to replacing "<code>o instanceof Apple</code>"
+with a predicate built atop "<code>getClass()</code>".
+<br> <br>
+
+<br><b>Answer:</b>
+T,F,T,F,T, 
+T,F,T,F,T
+</li></ol>
+
+
+
+
+
+
+<div id="fatkun-drop-panel">
+        <a id="fatkun-drop-panel-close-btn">×</a>
+            <div id="fatkun-drop-panel-inner">
+                <div class="fatkun-content">
+                    <svg class="fatkun-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5892"><path d="M494.933333 782.933333c2.133333 2.133333 4.266667 4.266667 8.533334 6.4h8.533333c6.4 0 10.666667-2.133333 14.933333-6.4l2.133334-2.133333 275.2-275.2c8.533333-8.533333 8.533333-21.333333 0-29.866667-8.533333-8.533333-21.333333-8.533333-29.866667 0L533.333333 716.8V128c0-12.8-8.533333-21.333333-21.333333-21.333333s-21.333333 8.533333-21.333333 21.333333v588.8L249.6 475.733333c-8.533333-8.533333-21.333333-8.533333-29.866667 0-8.533333 8.533333-8.533333 21.333333 0 29.866667l275.2 277.333333zM853.333333 874.666667H172.8c-12.8 0-21.333333 8.533333-21.333333 21.333333s8.533333 21.333333 21.333333 21.333333H853.333333c12.8 0 21.333333-8.533333 21.333334-21.333333s-10.666667-21.333333-21.333334-21.333333z" p-id="5893"></path></svg>
+                    <div class="fatkun-title">Drag and Drop</div>
+                    <div class="fatkun-desc">The image will be downloaded</div>
+                </div>
+            </div>
+    </div></body></html>

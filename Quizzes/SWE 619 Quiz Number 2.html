@@ -1,0 +1,115 @@
+
+<!-- saved from url=(0098)https://d1b10bmlvqabco.cloudfront.net/attach/jzmxgkizyr119g/gxxicyrgsbf2x6/k0gsquk05xl/quiz02.html -->
+<html class="gr__d1b10bmlvqabco_cloudfront_net"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>SWE 619 Quiz Number 2</title>
+</head>
+<body data-gr-c-s-loaded="true">
+
+<center>
+ <h1>
+  SWE 619 Quiz Number 2 <br>
+  September 11, 2019
+ </h1>
+</center>
+
+
+
+<font size="+3">
+Name:
+</font>
+<br>
+<hr>
+<font size="+1">
+Consider the following 2 specifications, the second of which
+has an associated implementation:
+<pre>public static int minIndex (int [] a) {... implementation omitted ... }
+   // EFFECTS: if a null throw NullPointerException, else if a.length=0 throw
+   //      IllegalArgumentException else return index of some min element in a.
+public static void setSmall (int [] a, int i) {
+   // REQUIRES: a != null, 0 &lt;= i &lt; a.length
+   // MODIFIES a
+   // EFFECTS: rearranges elements in array a so that some smallest element is at index i
+   int j = minIndex(a); int t = a[j]; a[j] = a[i]; a[i] = t;    }
+</pre>
+<ol>
+	<li> Suppose we wish to transform the 
+	<code> setSmall</code> precondition 
+	<code>a != null</code> into defined behavior with
+	an exception.
+<ul>
+<li> What exception would Bloch recommend for this transformation?
+<br><br>
+ <br>   <b> Answer</b>: <code>NullPointerException</code>.
+</li><li> Rewrite the precondition and postcondition 
+for <code>setSmall()</code> to achieve this result.
+<br><br>
+<br><br>
+<br><br>
+ <br>   <b> Answer</b>: 
+Note that the predicate <code>a!=null</code> is no longer in the REQUIRES clause.
+<pre>   // REQUIRES: 0 &lt;= i &lt; a.length
+   // MODIFIES a
+   // EFFECTS: if a = null throw NullPointerException else
+   //          rearranges elements in array a so that 
+   //          smallest element is at index i
+</pre>
+</li><li> Does the given implementation of <code>setSmall()</code>
+satisfy this revised specification? 
+<br><br>
+ <br>   <b> Answer</b>:  Yes.  
+	Note that the call to <code>minIndex()</code>
+	generates the correct exception.
+</li></ul>
+</li><li>
+	Suppose we wish, in addition, to transform the
+	<code>setSmall()</code> precondition 
+	<code>0 &lt;= i &lt; a.length</code> into defined behavior with
+	an exception.
+<ul>
+<li> What exception would Bloch recommend for this transformation?
+Hint: Note that <code>i</code> is described as an "index".
+<br><br>
+ <br>   <b> Answer</b>: <code>IndexOutOfBoundsException</code>
+</li><li> Extend your rewrite of the precondition and postcondition 
+for <code>setSmall()</code> to achieve this result.
+<br><br>
+<br><br>
+<br><br>
+ <br>   <b> Answer</b>: 
+Note that the predicate <code>0 &lt;= i &lt; a.length</code> is no longer in the REQIURES clause.
+<pre>   // MODIFIES a
+   // EFFECTS: if a = null throw NullPointerException else
+   //          if !(0 &lt;= i &lt; a.length) throw IndexOutOfBoundsException else
+   //          rearranges elements in array a so that 
+   //          smallest element is at index i
+</pre>
+</li><li> Does the given implementation of <code>setSmall()</code>
+satisfy this revised specification?
+<br><br>
+ <br>   <b> Answer</b>:
+No. 
+There are two cases.
+If the array is <b>not</b> empty,
+then the implementation returns <code>IndexOutOfBoundsException</code>.
+However, if the array is empty,
+then the implementation
+generates <code>IllegalArgumentException</code>.
+via the call to <code>minIndex()</code>,
+which is <b>not</b> <code>IndexOutOfBoundsException</code>.
+</li></ul>
+</li></ol>
+</font>
+
+
+
+
+<div id="fatkun-drop-panel">
+        <a id="fatkun-drop-panel-close-btn">×</a>
+            <div id="fatkun-drop-panel-inner">
+                <div class="fatkun-content">
+                    <svg class="fatkun-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5892"><path d="M494.933333 782.933333c2.133333 2.133333 4.266667 4.266667 8.533334 6.4h8.533333c6.4 0 10.666667-2.133333 14.933333-6.4l2.133334-2.133333 275.2-275.2c8.533333-8.533333 8.533333-21.333333 0-29.866667-8.533333-8.533333-21.333333-8.533333-29.866667 0L533.333333 716.8V128c0-12.8-8.533333-21.333333-21.333333-21.333333s-21.333333 8.533333-21.333333 21.333333v588.8L249.6 475.733333c-8.533333-8.533333-21.333333-8.533333-29.866667 0-8.533333 8.533333-8.533333 21.333333 0 29.866667l275.2 277.333333zM853.333333 874.666667H172.8c-12.8 0-21.333333 8.533333-21.333333 21.333333s8.533333 21.333333 21.333333 21.333333H853.333333c12.8 0 21.333333-8.533333 21.333334-21.333333s-10.666667-21.333333-21.333334-21.333333z" p-id="5893"></path></svg>
+                    <div class="fatkun-title">Drag and Drop</div>
+                    <div class="fatkun-desc">The image will be downloaded</div>
+                </div>
+            </div>
+    </div></body></html>
